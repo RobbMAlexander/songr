@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<link rel="stylesheet" href="./css/cookie.css">
+
+<h1>My Friends</h1>
+<li th:each="album : ${albums}">
+    <span th:text="${'First Name: ' + friend.firstName}"></span>
+    <br><span th:text="${'Last Name: ' + friend.lastName}"></span>
+    <br><span th:text="${'Number Of Years Of Friendship: ' + friend.yearsOfFriendship}"></span>
+    <br><br>
+</li>
+
+</body>
+</html>
