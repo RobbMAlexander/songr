@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 public class Album {
 
+    //Default constructor
+    public Album() {
+    }
+
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;
         this.artist = artist;
