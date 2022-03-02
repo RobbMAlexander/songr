@@ -1,8 +1,12 @@
 body {
-background-color: lavender
-
+    background-color: lavender;
+    text-align: center;
+    font-family: arial;
+    color: dark grey;
+    font-size: large;
 }
 
 .cover-art {
-    width: 40%
+    width: 20%
 }
+

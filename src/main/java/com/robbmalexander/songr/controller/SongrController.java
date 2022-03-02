@@ -1,5 +1,6 @@
 package com.robbmalexander.songr.controller;
 
+import com.robbmalexander.songr.model.Album;
 import com.robbmalexander.songr.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,11 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
+
 @Controller
 public class SongrController {
 
     @Autowired
-    SongrRepository songrRepository;
+    AlbumRepository albumRepository;
 
     @ResponseBody
     @GetMapping("hello")
@@ -31,18 +34,20 @@ public class SongrController {
     @GetMapping ("albums")
     public String renderSplashPage (Model songrSplashModel) {
         //TODO: add attributes here as necessary
-        //songrSplashmodel.addAttribute("albums", albums);
+        List<Album> albums = albumRepository.findAll();
+        songrSplashModel.addAttribute("albums", albums);
         return "splash-page.html";
     }
 
-/*    @ResponseBody
+    @ResponseBody
     @PostMapping("/addAlbum")
-    public RedirectView addAlbum (String addedAlbumTitle, String addedAlbumArtist){
-        Album album = new Album(addedAlbumTitle, )
-                //TODO: write redirect for POST
-        return "Successfully added album: " + addedAlbumTitle;
+    public RedirectView addAlbum (String title, String artist, int songCount, int length, String imageUrl){
+        Album album = new Album(title, artist, songCount, length, imageUrl);
+        albumRepository.save(album);
+        return new RedirectView("albums");
+        //return "Successfully added album: " + title;
     }
-
+/*
     @GetMapping("/")
     public String get */
 
