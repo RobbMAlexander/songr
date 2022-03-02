@@ -10,11 +10,13 @@
 <body>
 <link rel="stylesheet" href="./css/cookie.css">
 
-<h1>My Friends</h1>
+<h1>Notable Albums</h1>
 <li th:each="album : ${albums}">
-    <span th:text="${'First Name: ' + friend.firstName}"></span>
-    <br><span th:text="${'Last Name: ' + friend.lastName}"></span>
-    <br><span th:text="${'Number Of Years Of Friendship: ' + friend.yearsOfFriendship}"></span>
+    <div> <img class="cover-art" th:src=${src=this.imageUrl}></div>
+    <span th:text="${'Album Title: ' + album.title}"></span>
+    <br><span th:text="${'Artist Name: ' + album.artist}"></span>
+    <br><span th:text="${'Track Count: ' + album.songCount}"></span>
+    <br><span th:text="${'Total Playing Time: ' + friend.yearsOfFriendship}"></span>
     <br><br>
 </li>
 
