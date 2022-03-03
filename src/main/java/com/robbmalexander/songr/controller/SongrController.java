@@ -44,11 +44,16 @@ public class SongrController {
     public RedirectView addAlbum (String title, String artist, int songCount, int length, String imageUrl){
         Album album = new Album(title, artist, songCount, length, imageUrl);
         albumRepository.save(album);
-        return new RedirectView("albums");
+        return new RedirectView("/");
         //return "Successfully added album: " + title;
     }
 /*
-    @GetMapping("/")
-    public String get */
+    @GetMapping("/editAlbum{title}")
+
+    TODO:
+    public String editAlbumView()
+    songrSplashModel.addAttribute("album", editedAlbum)
+    return "edit-album.html"
+    */
 
 }
