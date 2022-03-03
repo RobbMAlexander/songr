@@ -6,6 +6,16 @@ body {
     font-size: large;
 }
 
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+li {
+    list-style: 🎵;
+}
+
 .cover-art {
     width: 20%
 }

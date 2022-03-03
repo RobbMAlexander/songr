@@ -12,13 +12,16 @@
 
 <h1>songr</h1>
 <br>
-<h2>🎼 Notable Albums 🎵</h2>
+<h2>🎼 Notable Albums</h2>
 <li th:each="album : ${albums}">
-    <div><img class="cover-art" th:src="${album.imageUrl}"></div>
+    <div><a th:href="${'/view-album/' + album.title}"><img class="cover-art" th:src="${album.imageUrl}"></a></div>
+    <!--<div><img class="record-icon" src=https://www.flaticon.com/free-icons/vinyl"></div>-->
     <br><span th:text="${'Album Title: ' + album.title}"></span>
     <br><span th:text="${'Artist Name: ' + album.artist}"></span>
     <br><span th:text="${'Track Count: ' + album.songCount}"></span>
     <br><span th:text="${'Total Playing Time: ' + album.length}"></span>
+    <br><a th:href="${'/view-album/' + album.title}">View Album Info</a>
+    <br><a th:href="${'/edit-album/' + album.title}">Edit Album Info</a>
     <br><br>
 </li>
 

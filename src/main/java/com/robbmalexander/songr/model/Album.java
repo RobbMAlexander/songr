@@ -1,6 +1,7 @@
 package com.robbmalexander.songr.model;
 
 import javax.persistence.*;
+import java.util.*;
 
 @Entity
 public class Album {
@@ -65,4 +66,19 @@ public class Album {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    @OneToMany(mappedBy="trackOnAlbum")
+    @OrderBy("trackNumber")
+    List<Song> trackList;
+
+    public List<Song> getTrackList() {
+        return trackList;
+    }
+
+
+
 }
